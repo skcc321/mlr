@@ -26,6 +26,14 @@ module Mlr
   PYTHON = 'python'.freeze
   STRATEGY = PYTHON
 
+  DETECT_MODE = ->(points) {
+    if points.all? { |point| point.is_a?(Mlr::AnchorPoint2D) }
+      Mlr::MODE2D
+    elsif points.all? { |point| point.is_a?(Mlr::AnchorPoint3D) }
+      Mlr::MODE3D
+    end
+  }
+
   # strategy selector
   def self.strategy
     case STRATEGY
@@ -34,19 +42,20 @@ module Mlr
   end
 
   # interface
-  def self.from_matrix(matrix)
-  end
-
   def self.from_array(array)
+    points = array.map do |line|
+      case line.size
+      when 3 then Mlr::AnchorPoint2D.new(*line)
+      when 4 then Mlr::AnchorPoint3D.new(*line)
+      else
+        raise 'wrong number of elements in array'
+      end
+    end
+
+    from_points(points)
   end
 
   def self.from_points(points)
-    mode = if points.all? { |point| point.is_a?(Mlr::AnchorPoint2D) }
-             Mlr::MODE2D
-           elsif points.all? { |point| point.is_a?(Mlr::AnchorPoint3D) }
-             Mlr::MODE3D
-           end
-
-    strategy.get_point(points: points, mode: mode)
+    strategy.get_point(points: points, mode: DETECT_MODE.call(points))
   end
 end
