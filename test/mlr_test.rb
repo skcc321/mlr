@@ -9,7 +9,7 @@ class MlrTest < Minitest::Test
   def test_it_does_multilateration_from_2D_points
     assert_equal(
       Mlr.from_points([
-        Mlr::AnchorPoint2D.new(0, 110, 50),
+        Mlr::AnchorPoint2D.new(0, 100, 50),
         Mlr::AnchorPoint2D.new(100, 100, 50),
         Mlr::AnchorPoint2D.new(100, 0, 50)
       ]),
