@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["skcc321@gmail.com"]
 
   spec.summary       = %q{multilateration}
-  spec.description   = %q{ruby wrapper from this python multilateration solution - https://github.com/kamalshadi/Localization}
+  spec.description   = %q{ruby wrapper for https://github.com/kamalshadi/Localization}
   spec.homepage      = "https://github.com/skcc321/mlr"
   spec.license       = "MIT"
 
