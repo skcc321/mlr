@@ -27,7 +27,7 @@ Also you need python libraries
 
 ## Usage
 
-### detect point from Mlr::AnchorPoint struct (#from_points)
+### #from_points - detect point from Mlr::AnchorPoint struct
 
 ```ruby
 
@@ -43,7 +43,7 @@ Mlr.from_points([
 
 ```
 
-### detect point from Array of Arrays (#from_array)
+### #from_array - detect point from Array of Arrays
 
 ```ruby
 
