@@ -1,6 +1,6 @@
 # Mlr
 
-multilateration solution
+multilateration solution based on https://github.com/kamalshadi/Localization python library
 
 ## Installation
 
