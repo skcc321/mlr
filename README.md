@@ -48,17 +48,19 @@ Mlr.from_points([
 
 # 3xN (2d result)
 
-Mlr.from_points([
+Mlr.from_array([
   [0, 100, 50],
   [100, 100, 50],
   [100, 0, 50]
 ])
 
 # or 4xN (3d result)
-Mlr.from_points([
+Mlr.from_array([
   [0, 100, 0, 50],
   [100, 100, 100, 50],
   [100, 0, 200, 50]
 ])
+LSE Geolocating...
+ => #<struct Mlr::ResultPoint3D x=56.699519667205976, y=56.69946167965226, z=99.99998609719331>
 
 ```
