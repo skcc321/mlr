@@ -27,7 +27,7 @@ Also you need python libraries
 
 ## Usage
 
-# detect point from Mlr::AnchorPoint struct
+### detect point from Mlr::AnchorPoint struct (#from_points)
 
 ```ruby
 
@@ -39,10 +39,11 @@ Mlr.from_points([
   Mlr::AnchorPoint2D.new(100, 100, 50),
   Mlr::AnchorPoint2D.new(100, 0, 50)
 ])
+=> #<struct Mlr::ResultPoint2D x=59.103629855759586, y=59.10363763568137>
 
 ```
 
-# detect point from Array of Arrays
+### detect point from Array of Arrays (#from_array)
 
 ```ruby
 
